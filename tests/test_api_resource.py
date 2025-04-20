@@ -74,7 +74,6 @@ async def test_get_passed_in_file():
         )
 
 
-@pytest.mark.asyncio
-async def test_print_attrs():
+def test_print_attrs():
     a1 = APIResource(id="ABC1234").print_attrs()
     assert a1 == 'id="ABC1234"'
