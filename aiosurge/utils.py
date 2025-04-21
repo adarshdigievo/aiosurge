@@ -1,13 +1,18 @@
 from aiocsv import AsyncReader
 import aiofiles
 
+
 async def load_tasks_data_from_csv(file_path: str):
     tasks_data = []
 
     async with aiofiles.open(file_path) as csvfile:
         reader = AsyncReader(csvfile)
 
-        headers = await anext(reader, None)
+        try:
+            headers = await reader.__anext__()
+        except StopAsyncIteration:
+            headers = None
+
         assert type(headers) is list and len(headers) > 0
 
         async for row in reader:
