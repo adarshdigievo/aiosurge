@@ -1,7 +1,7 @@
 import dateutil.parser
 
-from aiosurge.errors import SurgeMissingIDError, SurgeTaskDataError
-from aiosurge.api_resource import TEAMS_ENDPOINT, TASKS_ENDPOINT, APIResource
+from aiosurge.errors import SurgeMissingIDError
+from aiosurge.api_resource import TEAMS_ENDPOINT, APIResource
 
 
 class Team(APIResource):
