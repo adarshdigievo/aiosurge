@@ -17,4 +17,4 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Test with python ${{ matrix.python-version }}
-        run: uv run --frozen pytest
+        run: uv sync --locked --extra dev && uv run --frozen pytest
