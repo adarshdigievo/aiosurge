@@ -38,7 +38,7 @@ pip install -e .
 
 ## Usage
 
-The below examples assume that the code is executed in an async environment (in the body of coroutine functions)
+The below examples assume that the code is **executed in an async environment** (in the body of coroutine functions)
 
 ### Authentication
 
