@@ -1,5 +1,5 @@
 import gzip
-from time import sleep
+import asyncio
 import urllib
 import tempfile
 import shutil
@@ -85,7 +85,7 @@ class Report(APIResource):
 
             # Wait two seconds before polling again
             elif response.status == "CREATING":
-                sleep(2)
+                await asyncio.sleep(2)
                 continue
             else:
                 raise ValueError(
