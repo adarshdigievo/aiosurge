@@ -18,7 +18,7 @@ dependencies = [
     "urllib3==2.4.0",
 ]
 
-[dependency-groups]
+[project.optional-dependencies]
 dev = [
     "pytest-asyncio>=0.26.0",
     "pytest==8.3.5",
@@ -40,12 +40,12 @@ create_virtualenvs = true
 
 # Base environment configuration for running tests under different Python versions
 [tool.tox.env_run_base]
+skip_install = true
 description = "Run tests under {base_python}"
-
 deps = ["uv"]
-
 commands = [
-    ["uv", "run", "pytest"],
+    ["uv", "sync", "--all-extras", "--active"],
+    ["uv", "run", "--active", "pytest"],
 ]
 allowlist_externals = [
     "uv",

@@ -8,7 +8,7 @@ The Surge Python SDK provides convenient access to the Surge API from applicatio
 ## Development
 
 - To install dev dependencies, first [install uv](https://docs.astral.sh/uv/getting-started/installation/)
-- Install the dev dependencies using `uv sync --dev`
+- Install the optional dev dependencies using `uv sync --extra dev`
 - Test the package across supported python versions using the `tox` command.
 
 - You may also use the `pytest` command directly to run tests from the command line:
